@@ -97,31 +97,9 @@ The first main results we want to show is on task Bandits. This task aims to sho
 **Waiting for data generation**
 #### [EXP 6]: RAGEN for bandits
 ```bash
-bash train.sh frozenlake \
-    model.base_model=Qwen/Qwen2.5-7B-Instruct \
-    model.experiment_name=two_armed_bandit_qwen_2.5_7b_instruct_ragen \
-    training.micro_batch_size=2 \
-    training.use_kl_loss=True \
-    training.max_turns=1 \
-    optimization.adv_estimator=grpo \
-    training.n_rollout=16 \
-    training.train_batch_size=8 \
-    training.ppo_batch_size=128
-```
+
 #### [EXP 7]: RAGEN w/o thinking for bandits
-```bash
-bash train.sh frozenlake \
-    model.base_model=Qwen/Qwen2.5-7B-Instruct \
-    model.experiment_name=two_armed_bandit_qwen_2.5_7b_instruct_ragen_no_think \
-    training.micro_batch_size=2 \
-    training.use_kl_loss=True \
-    training.max_turns=1 \
-    optimization.adv_estimator=grpo \
-    training.no_think_rl=True \
-    training.n_rollout=16 \
-    training.train_batch_size=8 \
-    training.ppo_batch_size=128
-```
+
 
 #### Both golden and silver cases can be calculated by math expectation values.
 
@@ -163,48 +141,6 @@ bash train.sh sokoban \
     ... Waiting to be done
 ```
 #### [EXP 11]: Prompt for sokoban
-```bash
-waiting to be done
-```
-
-### *EXP SET 4*: Main results for task Frozen Lake.
-We test Frozen Lake with RAGEN, RAGEN w/o thinking, SFT, and prompt. This task aims to show that RAGEN can interact with the more complex and non-deterministic environment and learn from it, without any human supervision.
-#### [EXP 12]: RAGEN for frozen lake
-```bash
-bash train.sh frozenlake \
-    model.base_model=Qwen/Qwen2.5-7B-Instruct \
-    model.experiment_name=frozenlake_qwen_2.5_7b_instruct_ragen \
-    training.micro_batch_size=2 \
-    training.use_kl_loss=True \
-    optimization.adv_estimator=grpo \
-    training.max_turns=5 \
-    training.n_rollout=16 \
-    training.train_batch_size=8 \
-    training.ppo_batch_size=128
-```
-#### [EXP 13]: RAGEN w/o thinking for frozen lake
-```bash
-bash train.sh frozenlake \
-    model.base_model=Qwen/Qwen2.5-7B-Instruct \
-    model.experiment_name=frozenlake_qwen_2.5_7b_instruct_ragen_no_think \
-    training.micro_batch_size=2 \
-    training.use_kl_loss=True \
-    optimization.adv_estimator=grpo \
-    training.no_think_rl=True \
-    training.max_turns=5 \
-    training.n_rollout=16 \
-    training.train_batch_size=8 \
-    training.ppo_batch_size=128
-```
-#### [EXP 14]: SFT for frozen lake
-```bash
-bash train.sh frozenlake \
-    model.base_model=Qwen/Qwen2.5-7B-Instruct \
-    model.experiment_name=frozenlake_qwen_2.5_7b_instruct_sft \
-    training.use_sft=True \
-    ... Waiting to be done
-```
-#### [EXP 15]: Prompt for frozen lake
 ```bash
 waiting to be done
 ```

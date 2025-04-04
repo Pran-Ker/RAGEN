@@ -84,35 +84,7 @@ bash train.sh sokoban \
     ${BASE_PARAMS}
 ```
 
-### FrozenLake
-```bash
-# RAGEN - Base command
-bash train.sh frozenlake \
-    model.base_model=Qwen/Qwen2.5-[0.5B|3B]-Instruct \
-    model.experiment_name=frozenlake_[0_5B|3B]_instruct_ragen_main \
-    training.train_batch_size=4 \
-    training.max_turns=5 \
-    training.n_rollout=8 \
-    ${BASE_PARAMS}
-
-# Add for RAGEN w/o thinking
-    training.no_think_rl=True
-
-# SFT Training
-bash train.sh frozenlake \
-    rl_or_sft=sft \
-    sft.output_dir=models/sft/frozenlake/Qwen2.5-[0.5B|3B]-Instruct \
-    sft.training.base_model=Qwen/Qwen2.5-[0.5B|3B]-Instruct \
-    sft.training.experiment_name=frozenlake_[0_5B|3B]_instruct_sft \
-    sft.data_generation.train_size=10000 \
-    sft.data_generation.test_size=500 \
-    sft.training.micro_batch_size=4 \
-    sft.training.epochs=5 \
-    training.val_batch_size=10 \
-    training.n_rollout=1 \
-    ${BASE_PARAMS}
 ```
-
 Usage notes:
 1. Replace [0.5B|3B] with desired model size
 2. Adjust experiment names accordingly

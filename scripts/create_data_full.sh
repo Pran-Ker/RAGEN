@@ -59,7 +59,6 @@ main() {
     mkdir -p data/sokoban data/sokoban_hard data/sokoban_xhard \
             data/sokoban_large data/sokoban_xlarge \
             data/sokoban_multi data/sokoban_xmulti \
-            data/frozenlake \
             data/two_armed_bandit
     
     # Create normal Sokoban dataset (baseline)

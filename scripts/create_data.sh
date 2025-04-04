@@ -50,9 +50,7 @@ create_sokoban_dataset() {
 
 # Main function
 main() {
-    # Create data directory if it doesn't exist
-    mkdir -p data/sokoban data/frozenlake data/two_armed_bandit
-    
+   
     # Create datasets
     create_sokoban_dataset
     

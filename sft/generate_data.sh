@@ -34,15 +34,5 @@ if [ "$ENV_TYPE" = "sokoban" ]; then
         --bfs_max_depths 100 \
         --prefix message \
         --num_processes 16
-elif [ "$ENV_TYPE" = "frozenlake" ]; then
-    python sft/utils/generate_sft_verl_frozenlake.py \
-        --env frozenlake \
-        --algo bfs \
-        --seed 100000 \
-        --output sft/data/frozenlake \
-        --train_size 1000 \
-        --test_size 100 \
-        --bfs_max_depths 100 \
-        --prefix message \
-        --num_processes 16
+
 fi

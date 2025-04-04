@@ -35,10 +35,6 @@ class SFTPipeline:
                 'MAX_STEPS': config['sft']['sokoban']['max_steps'],
                 'SEARCH_DEPTH': config['sft']['sokoban']['search_depth']
             },
-            'frozenlake': {
-                'SIZE': config['sft']['frozenlake']['size'],
-                'P': config['sft']['frozenlake']['p'],
-                'IS_SLIPPERY': config['sft']['frozenlake']['is_slippery']
             }
         }
 

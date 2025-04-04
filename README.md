@@ -83,7 +83,7 @@ If this fails, you can follow the manual setup instructions in `scripts/setup_ra
 Here's how to train models with RAGEN:
 
 ### Create data
-We provide 10k first-round-observation data for both Sokoban and FrozenLake tasks.
+We provide 10k first-round-observation data for both Sokoban and  tasks.
 
 ```bash
 # Basic data creation

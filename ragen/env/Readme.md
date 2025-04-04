@@ -23,7 +23,7 @@ Class attributes:
  - `INVALID_ACTION`: an action to handle invalid input (0 as default), used when the action is invalid
 
 ## BaseGridEnv
-Environment for grid-based environments and discrete action spaces, like FrozenLakeEnv and SokobanEnv.
+Environment for grid-based environments and discrete action spaces, like   SokobanEnv.
 
 Methods already implemented:
 - `execute_predictions`

@@ -69,7 +69,7 @@ trainer:
 
 # SFT settings
 sft:
-  env_type: "sokoban"  # or "frozenlake"
+  env_type: "sokoban"  
   output_dir: "models/sft"
 
   # Data generation parameters
@@ -110,8 +110,3 @@ sft:
     max_steps: 100
     search_depth: 30
   
-  # FrozenLake-specific settings
-  frozenlake:
-    size: 4
-    p: 0.8
-    is_slippery: true
