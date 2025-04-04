@@ -19,8 +19,6 @@ from multiprocessing import Pool
 from tqdm import tqdm
 
 from ragen.env import FrozenLakeEnv
-from ragen.env.frozen_lake.utils import get_shortest_action_path, plot_animation
-
 
 INSTRUCTION_TEMPLATE = """You are walking on a frozen lake.
 

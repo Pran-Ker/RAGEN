@@ -48,47 +48,6 @@ create_sokoban_dataset() {
     echo -e "${GREEN}Sokoban dataset created successfully!${NC}"
 }
 
-# Create FrozenLake dataset
-create_frozen_lake_dataset() {
-    print_step "Configuring FrozenLake environment settings..."
-    
-    # FrozenLake environment settings
-    export SIZE=4  # size * size grid
-    export P=0.8   # percentage of frozen tiles
-    
-    print_step "Creating FrozenLake dataset..."
-    
-    python ragen/env/frozen_lake/create_dataset.py \
-        --output data/frozenlake \
-        --seed 100000 \
-        --train_size 100000 \
-        --test_size 500 \
-        --prefix qwen-instruct
-        
-    echo -e "${GREEN}FrozenLake dataset created successfully!${NC}"
-}
-
-# Create Two-Armed Bandit dataset
-create_two_armed_bandit_dataset() {
-    print_step "Configuring Two-Armed Bandit environment settings..."
-    
-    # Two-Armed Bandit environment settings
-    export LOW_RISK_NAME=phoenix
-    export HIGH_RISK_NAME=dragon
-    
-    print_step "Creating Two-Armed Bandit dataset..."
-    
-    python ragen/env/bandit/create_dataset_two_armed.py \
-        --output data/two_armed_bandit \
-        --seed 100000 \
-        --train_size 100000 \
-        --test_size 500 \
-        --prefix qwen-instruct
-        
-    echo -e "${GREEN}Two-Armed Bandit dataset created successfully!${NC}"
-}
-
-
 # Main function
 main() {
     # Create data directory if it doesn't exist
@@ -96,8 +55,6 @@ main() {
     
     # Create datasets
     create_sokoban_dataset
-    create_frozen_lake_dataset
-    create_two_armed_bandit_dataset
     
     echo -e "${GREEN}All datasets created successfully!${NC}"
 }
